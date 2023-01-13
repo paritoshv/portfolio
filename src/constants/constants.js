@@ -39,8 +39,8 @@ export const projects = [
 
 export const TimeLineData = [
   { year: 2019, text: 'Completed my Intermediate and joined BITS Pilani for B.E', },
-  { year: 2021, text: 'Worked as a Intern developer at Pyrotect Electronics Jodhhpur for 3 months', },
-  { year: 2022, text: 'Worked as a SOftware Intern at Texas Instruments India, Bangalore', },
+  { year: 2021, text: 'Worked as a Intern developer at Pyrotech Electronics Jodhpur for 3 months', },
+  { year: 2022, text: 'Worked as a Software Intern at Texas Instruments India, Bangalore', },
   { year: 2023, text: 'Expecting to Graduate from BITS, with Bachelors degree', },
   // { year: 2021, text: 'Started my own platform', },
 ];
