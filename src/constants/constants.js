@@ -2,7 +2,7 @@ export const projects = [
   {
     title: 'Responsive Bank Web App',
     description: "Using React, Next.js and Vite , a fullly responsive web app that adjusts its UI to fit any screen size. This project also used TailwindCSS libraries directly.This is just a sample website which can be implemented if required.",
-      image: '/images/1.png',
+      image: '/images/5.png',
       tags: ['Vite', 'ReactJS', 'NextJS'],
     visit: 'https://github.com/paritoshv/bank-app',
     source: 'https://paritoshv.github.io/bank-app/',
