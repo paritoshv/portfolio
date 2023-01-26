@@ -1,7 +1,7 @@
 export const projects = [
   {
     title: 'DALL-E Open AI App',
-    description: "This is a Full Stack MERN AI Image Generation App. You as a user can give prompts as your wish and the applications returns AI image gereated from that promt by OPENAI's dall-e APIs",
+    description: "This is a Full Stack MERN AI Image Generation App. You as a user can give prompts as their wish and the applications returns AI image generated from that prompt by OPENAI's Dall-e APIs.",
       image: '/images/7.png',
       tags: ['OpenAI', 'MERN', 'Cloudinary'],
     visit: 'https://github.com/paritoshv/dall-e_clone',
