@@ -1,3 +1,3 @@
 ## Personal Portfolio
 
-![Portfolio Website](https://paritoshv.netlify.app/)
+https://paritoshv.netlify.app/
