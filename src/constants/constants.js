@@ -1,12 +1,22 @@
 export const projects = [
   {
+    title: 'DALL-E Open AI App',
+    description: "This is a Full Stack MERN AI Image Generation App. You as a user can give prompts as your wish and the applications returns AI image gereated from that promt by OPENAI's dall-e APIs",
+      image: '/images/7.png',
+      tags: ['OpenAI', 'MERN', 'Cloudinary'],
+    visit: 'https://github.com/paritoshv/dall-e_clone',
+    source: 'https://paritoshai.netlify.app/',
+    id: 0,
+  },
+  {
+
     title: 'Responsive Bank Web App',
     description: "Using React, Next.js and Vite , a fullly responsive web app that adjusts its UI to fit any screen size. This project also used TailwindCSS libraries directly.This is just a sample website which can be implemented if required.",
       image: '/images/5.png',
       tags: ['Vite', 'ReactJS', 'NextJS'],
     visit: 'https://github.com/paritoshv/bank-app',
     source: 'https://paritoshv.github.io/bank-app/',
-    id: 0,
+    id: 1,
   },
   {
     title: 'EEG classification of Brainwaves',
@@ -15,17 +25,9 @@ export const projects = [
     tags: ['ML', 'Python', 'Data-Processing'],
     source: 'https://physionet.org/content/chbmit/1.0.0/',
     visit: 'https://replit.com/@plattypusperry/Not-yet-released#main.py',
-    id: 1,
+    id: 3,
   },
-  // {
-  //   title: 'WebRTC App',
-  //   description: "This is a code repository for the corresponding YouTube video. In this tutorial, we're going to build and deploy a React Video Chat Application using WebRTC.",
-  //     image: '/images/3.jpg',
-  //     tags: ['React', 'WebRTC'],
-  //   source: 'https://google.com',
-  //   visit: 'https://google.com',
-  //   id: 2,
-  // },
+
   // {
   //   title: 'Unichat',
   //   description: "This is a code repository for the corresponding video tutorial. In this video, we will create a full Realtime Chat Application",
