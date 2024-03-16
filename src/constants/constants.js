@@ -1,7 +1,7 @@
 export const projects = [
   {
     title: 'DALL-E Open AI App',
-    description: "This is a Full Stack MERN AI Image Generation App. You as a user can give prompts as their wish and the applications returns AI image generated from that prompt by OPENAI's Dall-e APIs.",
+    description: "This is a Full Stack MERN AI Image Generation App. You as a user can give prompts as their wish and the application returns AI generated image from that prompt by OPENAI's Dall-e APIs.",
       image: '/images/7.png',
       tags: ['OpenAI', 'MERN', 'Cloudinary'],
     visit: 'https://github.com/paritoshv/dall-e_clone',
@@ -10,12 +10,12 @@ export const projects = [
   },
   {
 
-    title: 'Responsive Bank Web App',
-    description: "Using React, Next.js and Vite , a fullly responsive web app that adjusts its UI to fit any screen size. This project also used TailwindCSS libraries directly.This is just a sample website which can be implemented if required.",
+    title: 'Youtube Clone App',
+    description: "Fully functional Youtube website with a different approach to Youtube's User Interface. The App Uses Youtuve V3 APis from RapidAPI to get the Youtube data.",
       image: '/images/5.png',
-      tags: ['Vite', 'ReactJS', 'NextJS'],
-    visit: 'https://github.com/paritoshv/bank-app',
-    source: 'https://paritoshv.github.io/bank-app/',
+      tags: ['Material-UI', 'ReactJS', 'RapidAPI'],
+    visit: 'https://github.com/paritoshv/youtube-clone',
+    source: 'https://youtube-paritosh.netlify.app/',
     id: 1,
   },
   {
@@ -43,6 +43,6 @@ export const TimeLineData = [
   { year: 2019, text: 'Completed my Intermediate and joined BITS Pilani for B.E', },
   { year: 2021, text: 'Worked as a Intern developer at Pyrotech Electronics Jodhpur for 3 months', },
   { year: 2022, text: 'Worked as a Software Intern at Texas Instruments India, Bangalore', },
-  { year: 2023, text: 'Expecting to Graduate from BITS, with Bachelors degree', },
+  { year: 2023, text: 'Graduated from BITS and joined Sp+(parking.com) as Software Engineer', },
   // { year: 2021, text: 'Started my own platform', },
 ];

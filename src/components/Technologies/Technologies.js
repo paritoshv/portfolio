@@ -1,5 +1,5 @@
 import React from 'react';
-import { DiRasberryPi, DiReact, DiPhotoshop } from 'react-icons/di';
+import { DiRasberryPi, DiReact, DiPhotoshop, DiDatabase } from 'react-icons/di';
 import { Section, SectionDivider, SectionText, SectionTitle } from '../../styles/GlobalComponents';
 import { List, ListContainer, ListItem, ListParagraph, ListTitle } from './TechnologiesStyles';
 
@@ -11,16 +11,16 @@ const Technologies = () =>  (
   <SectionTitle>Technologies</SectionTitle>
   <SectionText>
     I have worked with a range of Technologies in the Software Engineering world.
-    From Front-end Web development, design to Embedded Software.
+    My skills are in creating Web applications End to End.
   </SectionText>
   <List>
     <ListItem>
       <DiReact size="3rem"/>
       <ListContainer>
-        <ListTitle>Front-End</ListTitle>
+        <ListTitle>FullStack</ListTitle>
         <ListParagraph>
           Experienced with <br/>
-          React.js
+          React.js, Express(/Node) - JS
         </ListParagraph>
       </ListContainer>
     </ListItem>
@@ -29,17 +29,19 @@ const Technologies = () =>  (
       <ListContainer>
         <ListTitle>UI/UX</ListTitle>
         <ListParagraph>
-          Tools like Figma, Photoshop
+          Figma, Photoshop, <br/>
+          HTML/CSS, PremierPro, AE
         </ListParagraph>
       </ListContainer>
     </ListItem>
     <ListItem>
-      <DiRasberryPi size="3rem"/>
+      <DiDatabase size="3rem"/>
+      {/* <DiRasberryPi size="3rem"/> */}
       <ListContainer>
-        <ListTitle>Embedded Software</ListTitle>
+        <ListTitle>Databases</ListTitle>
         <ListParagraph>
-          Experienced with <br/>
-          C/C++ APIs, Firmware calls.
+          MongoDB, MySQL  <br/>
+          and Redis.
         </ListParagraph>
       </ListContainer>
     </ListItem>

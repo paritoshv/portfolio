@@ -9,12 +9,12 @@ const Hero = () => (
     <LeftSection>
       <SectionTitle main center>
         Hi. I'm Paritosh.<br />
-        A Software Engineer
+        A Software Developer
       </SectionTitle>
       <SectionText>
-        I’m also a Web developer and electronics undergrad with a keen eye for using efficient and latest technologies in bringing products to life.
+        I’m a Full Stack Developer with a keen eye for using efficient and latest technologies in bringing products to life.
       </SectionText>
-      <Button onClick={() => window.location ='mailto:varshneyparitosh7@gmail.com'}>Contact Me</Button>
+      <Button onClick={() => window.location ='https://drive.google.com/file/d/1CQeZzfkqd3v1wXn56Z5mMxBLuYSnC1Eo/view?usp=sharing'}>Resume</Button>
     </LeftSection>
   </Section>
 );
