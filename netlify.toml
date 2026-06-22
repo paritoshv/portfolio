@@ -1,0 +1,11 @@
+[build]
+  command = "next build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Next.js runtime: serves the App Router build (SSR + static) and
+# powers server routes (needed for the Phase 3 ask-me agent).
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
