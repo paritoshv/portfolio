@@ -1,19 +1,21 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #0a0a0b;
-  --color-surface: #100f12;
-  --color-surface-2: #16151a;
-  --color-fg: #ededeb;
-  --color-muted: #908f99;
-  --color-faint: #6a6976;
-  --color-border: #211f26;
-  --color-accent: #c9f24e;
-  --color-accent-dim: #9bbf3a;
+  --color-bg: #0a0f16;
+  --color-surface: #0e141d;
+  --color-surface-2: #131b26;
+  --color-fg: #e9eef6;
+  --color-muted: #8f9aac;
+  --color-faint: #5d6b80;
+  --color-border: #1d2736;
+  --color-accent: #ffb454;
+  --color-accent-dim: #cf9140;
+  --color-data: #7ac8ff;
+  --color-ok: #6fd388;
 
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-geist-mono), ui-monospace, "SF Mono", monospace;
-  --font-serif: var(--font-instrument-serif), ui-serif, Georgia, serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, "SF Mono", monospace;
+  --font-display: var(--font-bricolage), var(--font-geist-sans), sans-serif;
 }
 
 @layer base {
@@ -26,48 +28,57 @@
     background: var(--color-bg);
     color: var(--color-fg);
     font-family: var(--font-sans);
-    font-feature-settings: "ss01", "cv01";
   }
 
   ::selection {
     background: var(--color-accent);
-    color: #0a0a0b;
+    color: #14100a;
   }
 
   a {
     color: inherit;
     text-decoration: none;
   }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
 }
 
 @layer components {
-  /* Section label: small mono uppercase eyebrow */
+  /* Section label: small mono uppercase with an amber tick */
   .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
     font-family: var(--font-mono);
-    font-size: 0.7rem;
-    letter-spacing: 0.18em;
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--color-faint);
   }
-
-  /* Subtle ambient glow behind the hero */
-  .hero-glow {
-    background:
-      radial-gradient(
-        50% 60% at 50% 0%,
-        rgba(201, 242, 78, 0.08) 0%,
-        rgba(201, 242, 78, 0) 70%
-      );
+  .eyebrow::before {
+    content: "";
+    width: 0.55rem;
+    height: 1px;
+    background: var(--color-accent);
   }
 
-  /* Faint grid texture */
-  .grid-bg {
-    background-image:
-      linear-gradient(to right, rgba(255, 255, 255, 0.022) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255, 255, 255, 0.022) 1px, transparent 1px);
-    background-size: 64px 64px;
-    -webkit-mask-image: radial-gradient(70% 60% at 50% 30%, #000 0%, transparent 100%);
-    mask-image: radial-gradient(70% 60% at 50% 30%, #000 0%, transparent 100%);
+  /* Console-style framed surface */
+  .panel {
+    border: 1px solid var(--color-border);
+    background: linear-gradient(180deg, var(--color-surface-2), var(--color-surface));
+    border-radius: 0.75rem;
+  }
+
+  /* Faint dot-matrix texture behind the hero */
+  .dot-grid {
+    background-image: radial-gradient(rgba(233, 238, 246, 0.055) 1px, transparent 1px);
+    background-size: 22px 22px;
+    -webkit-mask-image: radial-gradient(65% 60% at 50% 30%, #000 0%, transparent 90%);
+    mask-image: radial-gradient(65% 60% at 50% 30%, #000 0%, transparent 90%);
   }
 
   .link-underline {
@@ -82,7 +93,6 @@
   }
 }
 
-/* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

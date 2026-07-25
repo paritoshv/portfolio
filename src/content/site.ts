@@ -24,6 +24,7 @@ export type Project = {
   live?: string;
   status?: string;
   featured?: boolean;
+  schematic: "pipeline" | "fanout" | "rag";
 };
 
 export const projects: Project[] = [
@@ -37,6 +38,7 @@ export const projects: Project[] = [
     code: "https://github.com/paritoshv/faultline-orchestrator",
     status: "Live demo in progress",
     featured: true,
+    schematic: "pipeline",
   },
   {
     name: "multi-llm-web-orchestrator",
@@ -46,6 +48,7 @@ export const projects: Project[] = [
       "A Chrome side-panel extension that orchestrates ChatGPT, Claude, Gemini, and Grok through authenticated browser sessions — fan a single prompt across providers and compare answers in one place.",
     stack: ["TypeScript", "Chrome Extension", "Multi-LLM"],
     code: "https://github.com/paritoshv/multi-llm-web-orchestrator",
+    schematic: "fanout",
   },
   {
     name: "mini-perplexity",
@@ -55,6 +58,7 @@ export const projects: Project[] = [
       "A compact Perplexity-style answer engine — runs live web search, grounds an LLM on the results, and returns concise answers with citations back to sources.",
     stack: ["JavaScript", "RAG", "Search"],
     code: "https://github.com/paritoshv/mikochan-the-mini-perplexity",
+    schematic: "rag",
   },
 ];
 

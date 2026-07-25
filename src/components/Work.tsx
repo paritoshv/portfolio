@@ -1,9 +1,13 @@
 import { projects } from "@/content/site";
 import Reveal from "./Reveal";
+import Schematic from "./Schematic";
 
 function Arrow() {
   return (
-    <span aria-hidden className="inline-block transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+    <span
+      aria-hidden
+      className="inline-block transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+    >
       ↗
     </span>
   );
@@ -11,67 +15,69 @@ function Arrow() {
 
 export default function Work() {
   return (
-    <section id="work" className="mx-auto max-w-5xl scroll-mt-24 px-6 py-24">
+    <section id="work" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-28">
       <Reveal>
         <p className="eyebrow">Selected work</p>
-        <h2 className="mt-3 text-2xl tracking-tight sm:text-3xl">
+        <h2 className="mt-4 font-display text-3xl font-semibold tracking-tight sm:text-4xl">
           What I&apos;ve built recently.
         </h2>
       </Reveal>
 
-      <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2">
+      <div className="mt-16 flex flex-col gap-20">
         {projects.map((p, i) => (
-          <Reveal
-            key={p.name}
-            delay={i * 0.06}
-            className={`bg-bg ${p.featured ? "sm:col-span-2" : ""}`}
-          >
-            <article className="flex h-full flex-col p-7 transition-colors hover:bg-surface">
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <h3 className="font-mono text-base text-fg">{p.name}</h3>
-                  <p className="mt-1 text-sm text-accent-dim">{p.tagline}</p>
-                </div>
-                <span className="eyebrow shrink-0 pt-1">{p.proves}</span>
-              </div>
-
-              <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted">
-                {p.description}
-              </p>
-
-              <div className="mt-5 flex flex-wrap gap-2">
-                {p.stack.map((s) => (
-                  <span
-                    key={s}
-                    className="rounded-full border border-border px-2.5 py-1 font-mono text-[0.7rem] text-faint"
-                  >
-                    {s}
+          <Reveal key={p.name} delay={i * 0.05}>
+            <article className="grid items-start gap-8 md:grid-cols-[320px_1fr] md:gap-12">
+              <div className="panel overflow-hidden">
+                <div className="flex items-center gap-1.5 border-b border-border px-3.5 py-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-border" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-border" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-border" />
+                  <span className="ml-2 font-mono text-[0.62rem] tracking-wider text-faint">
+                    {p.name}
                   </span>
-                ))}
+                </div>
+                <Schematic kind={p.schematic} />
               </div>
 
-              <div className="mt-6 flex items-center gap-5 pt-1 text-sm">
-                <a
-                  href={p.code}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-1.5 text-fg transition-colors hover:text-accent"
-                >
-                  Code <Arrow />
-                </a>
-                {p.live && (
+              <div>
+                <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+                  <h3 className="font-mono text-[0.95rem] text-fg">{p.name}</h3>
+                  <span className="font-mono text-xs text-faint">{p.proves}</span>
+                </div>
+
+                <p className="mt-3 font-display text-2xl font-medium tracking-tight text-fg">
+                  {p.tagline}
+                </p>
+
+                <p className="mt-4 max-w-2xl text-[0.95rem] leading-relaxed text-muted">
+                  {p.description}
+                </p>
+
+                <p className="mt-5 font-mono text-xs text-faint">{p.stack.join(" · ")}</p>
+
+                <div className="mt-6 flex items-center gap-6 text-sm">
                   <a
-                    href={p.live}
+                    href={p.code}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group inline-flex items-center gap-1.5 text-fg transition-colors hover:text-accent"
                   >
-                    Live <Arrow />
+                    Code <Arrow />
                   </a>
-                )}
-                {p.status && (
-                  <span className="font-mono text-xs text-faint">{p.status}</span>
-                )}
+                  {p.live && (
+                    <a
+                      href={p.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group inline-flex items-center gap-1.5 text-fg transition-colors hover:text-accent"
+                    >
+                      Live <Arrow />
+                    </a>
+                  )}
+                  {p.status && (
+                    <span className="font-mono text-xs text-faint">{p.status}</span>
+                  )}
+                </div>
               </div>
             </article>
           </Reveal>
