@@ -1,4 +1,4 @@
-export type SchematicKind = "pipeline" | "fanout" | "rag";
+export type SchematicKind = "pipeline" | "fanout" | "rag" | "gateway";
 
 const stroke = "var(--color-faint)";
 const strokeSoft = "var(--color-border)";
@@ -161,12 +161,47 @@ function Rag() {
   );
 }
 
+function Gateway() {
+  return (
+    <>
+      <Node x={14} y={62} w={56} text="agent" />
+      {/* permission wall with a gap the read passes through */}
+      <rect x={146} y={18} width={8} height={44} rx={2} fill="var(--color-surface-2)" stroke={stroke} strokeWidth={1} />
+      <rect x={146} y={88} width={8} height={44} rx={2} fill="var(--color-surface-2)" stroke={stroke} strokeWidth={1} />
+      <text x={150} y={12} textAnchor="middle" style={label}>
+        perms
+      </text>
+      <Node x={224} y={62} text="replica" />
+      <path d="M 70 75 H 220" stroke={stroke} strokeWidth={1} />
+      <path d="M 216 71.5 220 75 216 78.5" fill="none" stroke={stroke} strokeWidth={1} />
+      {/* a query without permission bounces off the wall */}
+      <path
+        d="M 70 84 C 100 92, 122 100, 141 106"
+        fill="none"
+        stroke={accent}
+        strokeWidth={1}
+        strokeDasharray="3 4"
+        opacity={0.8}
+      />
+      <path d="M 134 105 141 106 137 99" fill="none" stroke={accent} strokeWidth={1} opacity={0.8} />
+      <text x={150} y={124} textAnchor="middle" style={{ ...label, fill: accent }}>
+        403
+      </text>
+      <text x={255} y={104} textAnchor="middle" style={label}>
+        read-only
+      </text>
+      <circle cx={150} cy={75} r={3} fill={accent} className="animate-pulse motion-reduce:animate-none" />
+    </>
+  );
+}
+
 export default function Schematic({ kind }: { kind: SchematicKind }) {
   return (
     <svg viewBox="0 0 300 150" aria-hidden className="block w-full">
       {kind === "pipeline" && <Pipeline />}
       {kind === "fanout" && <Fanout />}
       {kind === "rag" && <Rag />}
+      {kind === "gateway" && <Gateway />}
     </svg>
   );
 }

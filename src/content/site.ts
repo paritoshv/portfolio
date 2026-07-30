@@ -24,10 +24,22 @@ export type Project = {
   live?: string;
   status?: string;
   featured?: boolean;
-  schematic: "pipeline" | "fanout" | "rag";
+  schematic: "pipeline" | "fanout" | "rag" | "gateway";
 };
 
 export const projects: Project[] = [
+  {
+    name: "django-admin-mcp",
+    tagline: "Read-only Django admin for AI agents",
+    proves: "MCP · access control",
+    description:
+      "A drop-in Django package that exposes admin data to AI agents over MCP. Every read runs through the admin's own permission checks, secret fields come back redacted, and queries hit read replicas with timeouts. In production it cut debugging sessions from hours to minutes and lets agents triage customer support tickets.",
+    stack: ["Python", "Django", "MCP", "OAuth PKCE"],
+    code: "https://github.com/paritoshv/django-admin-mcp",
+    status: "In production",
+    featured: true,
+    schematic: "gateway",
+  },
   {
     name: "faultline-orchestrator",
     tagline: "Durable multi-step LLM agent workflows",
